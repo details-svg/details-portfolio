@@ -1,26 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Details - Andrew Nabil | Creative Designer</title>
-  <meta name="description" content="Details by Andrew Nabil — Brand identity, printing, laser cutting, engraving, promotional gifts, fabric printing, motion graphics and video production." />
-  <meta property="og:title" content="Details - Andrew Nabil | Creative Designer" />
-  <meta property="og:description" content="Creative design & production services — Branding, Printing, Laser Cutting, Engraving, Promotional Gifts, Fabric Printing." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://picsum.photos/1200/630?random=10" />
-  <!-- Simple SVG favicon (purple D) -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%233d1e6d'/%3E%3Ctext x='50' y='58' font-size='50' fill='%23fff' font-family='Segoe UI,Arial' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E" />
+  <meta name="description" content="Details by Andrew Nabil — Branding, Printing, Laser Cutting, Engraving, Promotional Gifts, Fabric Printing, Motion Graphics and Video Production." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%233d1e6d'/%3E%3Ctext x='50' y='62' font-size='50' fill='%23fff' font-family='Segoe UI,Arial' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E" />
   <style>
-    /* ---------- Reset & basics ---------- */
     :root{
       --primary-1:#3d1e6d;
       --primary-2:#6b2fb5;
       --accent:#25d366;
       --muted:#777;
-      --bg-gradient: linear-gradient(135deg,var(--primary-1) 0%, var(--primary-2) 100%);
-      --card-shadow: 0 10px 30px rgba(61,30,109,0.12);
       --glass: rgba(255,255,255,0.98);
+      --card-shadow: 0 10px 30px rgba(61,30,109,0.12);
       --max-width:1200px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
@@ -28,142 +21,136 @@
     body{
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       color:#222;
-      background: var(--bg-gradient);
+      background: linear-gradient(135deg,var(--primary-1) 0%, var(--primary-2) 100%);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
       line-height:1.5;
     }
-    a{color:inherit}
+    a{color:inherit;text-decoration:none}
     img{display:block;max-width:100%;height:auto}
     .container{max-width:var(--max-width);margin:0 auto;padding:0 20px}
 
-    /* ---------- NAV ---------- */
+    /* NAV */
     nav{
       position:sticky;top:0;z-index:1200;
       background:var(--glass);
       backdrop-filter: blur(4px);
       box-shadow: 0 6px 30px rgba(61,30,109,0.08);
-      padding:14px 0;
+      padding:12px 0;
     }
     nav .wrap{display:flex;align-items:center;gap:20px;justify-content:space-between}
-    .brand{font-weight:800;color:var(--primary-1);letter-spacing:3px;font-size:1.35rem}
+    .brand{font-weight:800;color:var(--primary-1);letter-spacing:3px;font-size:1.25rem}
     .nav-links{display:flex;gap:18px;align-items:center}
-    .nav-links a{color:var(--primary-1);text-decoration:none;font-weight:600;padding:6px 8px;border-radius:8px}
+    .nav-links a{color:var(--primary-1);text-decoration:none;font-weight:700;padding:6px 8px;border-radius:8px}
     .nav-links a:hover{color:var(--primary-2)}
     .lang-switch{display:flex;gap:8px;background:#f1f1f1;padding:6px;border-radius:22px}
-    .lang-btn{border:0;background:transparent;padding:6px 10px;border-radius:16px;cursor:pointer;font-weight:700;color:var(--primary-1)}
+    .lang-btn{border:0;background:transparent;padding:6px 10px;border-radius:16px;cursor:pointer;font-weight:800;color:var(--primary-1)}
     .lang-btn.active{background:linear-gradient(135deg,var(--primary-1),var(--primary-2));color:#fff}
-
-    /* ---------- HERO ---------- */
-    .hero{min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 0;position:relative}
-    .hero .inner{color:white;z-index:2;max-width:900px;padding:40px}
-    .brand-name{font-size:4rem;font-weight:800;letter-spacing:4px;margin-bottom:8px;text-shadow:0 10px 30px rgba(0,0,0,0.35)}
-    .hero h1{font-size:1.6rem;font-weight:500;margin-bottom:12px}
-    .tagline{font-style:italic;opacity:.95;margin-bottom:10px}
-    .experience{margin-bottom:20px;font-weight:600}
-    .hero .cta{display:inline-block;background:#fff;color:var(--primary-1);padding:14px 28px;border-radius:999px;font-weight:800;text-decoration:none;transition:transform .25s,box-shadow .25s}
-    .hero .cta:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.25)}
-
-    /* decorative */
-    .hero:after{
-      content:"";position:absolute;inset:0;background:linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 30%);
-      mix-blend-mode:overlay;pointer-events:none
+    /* small screens nav wrap */
+    @media (max-width:760px){
+      nav .wrap{flex-direction:column;align-items:stretch;gap:10px}
+      .nav-links{justify-content:center;flex-wrap:wrap}
     }
 
-    /* ---------- Sections ---------- */
-    section{background:white;padding:64px 0}
+    /* HERO */
+    .hero{min-height:76vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:72px 0;position:relative}
+    .hero .inner{color:white;z-index:2;max-width:900px;padding:40px}
+    .brand-name{font-size:3.6rem;font-weight:800;letter-spacing:4px;margin-bottom:8px;text-shadow:0 10px 30px rgba(0,0,0,0.35)}
+    .hero h1{font-size:1.45rem;font-weight:500;margin-bottom:12px}
+    .tagline{font-style:italic;opacity:.95;margin-bottom:10px}
+    .experience{margin-bottom:20px;font-weight:700}
+    .hero .cta{display:inline-block;background:#fff;color:var(--primary-1);padding:12px 26px;border-radius:999px;font-weight:800;text-decoration:none;transition:transform .25s,box-shadow .25s}
+    .hero .cta:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.25)}
+    .hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle, rgba(255,255,255,0.04) 1%, transparent 30%);mix-blend-mode:overlay;pointer-events:none}
+
+    /* sections */
+    section{background:white;padding:56px 0}
     section.alt{background:#f7f8fb}
-    h2.section-title{color:var(--primary-1);font-size:2.4rem;text-align:center;margin-bottom:8px;font-weight:800}
+    h2.section-title{color:var(--primary-1);font-size:2.1rem;text-align:center;margin-bottom:8px;font-weight:800}
     p.section-sub{color:var(--primary-2);text-align:center;margin-bottom:28px;font-weight:600}
 
-    /* ---------- ABOUT ---------- */
-    .about .content{max-width:900px;margin:0 auto;color:#444;font-size:1.02rem;line-height:1.9}
+    /* ABOUT */
+    .about .content{max-width:900px;margin:0 auto;color:#444;font-size:1.02rem;line-height:1.85}
     .about .services-badges{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:20px}
     .service-badge{background:linear-gradient(135deg,var(--primary-1),var(--primary-2));color:#fff;padding:10px 14px;border-radius:22px;font-weight:700;box-shadow:var(--card-shadow)}
 
-    /* ---------- OUR SERVICES GRID (visual items) ---------- */
-    .services-grid{
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;max-width:var(--max-width);margin:28px auto 0;padding:0 20px;
-    }
-    .svc-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:var(--card-shadow);transition:transform .35s,box-shadow .35s;display:flex;flex-direction:column}
-    .svc-card:hover{transform:translateY(-10px);box-shadow:0 22px 50px rgba(61,30,109,0.16)}
-    .svc-card .thumb{height:170px;overflow:hidden}
-    .svc-card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
-    .svc-card .body{padding:18px;flex:1;display:flex;flex-direction:column;gap:8px}
-    .svc-card h3{color:var(--primary-1);font-size:1.12rem;margin-bottom:4px;font-weight:800}
-    .svc-card p{color:#555;font-size:0.98rem;line-height:1.6;margin-top:auto}
+    /* SERVICES GRID */
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:var(--max-width);margin:20px auto;padding:0 20px}
+    .svc-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:var(--card-shadow);transition:transform .35s,box-shadow .35s;display:flex;flex-direction:column}
+    .svc-card:hover{transform:translateY(-8px);box-shadow:0 22px 50px rgba(61,30,109,0.16)}
+    .svc-card .thumb{height:160px;overflow:hidden}
+    .svc-card .thumb img{width:100%;height:100%;object-fit:cover}
+    .svc-card .body{padding:14px;flex:1;display:flex;flex-direction:column;gap:8px}
+    .svc-card h3{color:var(--primary-1);font-size:1.05rem;margin-bottom:4px;font-weight:800}
+    .svc-card p{color:#555;font-size:0.98rem;line-height:1.55;margin-top:auto}
     .svc-card .sub{color:var(--primary-2);font-style:italic;font-size:0.95rem;margin-top:6px}
 
-    /* ---------- PRODUCTION SERVICES (cards with lists) ---------- */
-    .prod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;max-width:var(--max-width);margin:20px auto;padding:0 20px}
-    .prod-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:var(--card-shadow);transition:transform .3s}
+    /* PRODUCTION CARDS */
+    .prod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:var(--max-width);margin:18px auto;padding:0 20px}
+    .prod-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:var(--card-shadow);transition:transform .3s}
     .prod-card:hover{transform:translateY(-8px)}
     .prod-top{height:150px;position:relative}
-    .prod-top img{width:100%;height:100%;object-fit:cover;display:block}
-    .prod-body{padding:18px}
+    .prod-top img{width:100%;height:100%;object-fit:cover}
+    .prod-body{padding:14px}
     .prod-body h4{color:var(--primary-1);font-weight:800;margin-bottom:8px}
     .prod-body .desc{color:#444;margin-bottom:10px}
     .prod-body ul{list-style:none;padding:0;margin:0}
     .prod-body li{padding:8px 0;border-bottom:1px solid #f0f0f0;color:#555;display:flex;gap:10px;align-items:center}
     .prod-body li:before{content:'✓';background:linear-gradient(135deg,var(--primary-1),var(--primary-2));color:#fff;width:28px;height:28px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;margin-right:8px}
 
-    /* ---------- PORTFOLIO ---------- */
-    .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;max-width:var(--max-width);margin:18px auto;padding:0 20px}
-    .port-item{background:#fff;border-radius:14px;overflow:hidden;box-shadow:var(--card-shadow);transition:transform .35s}
-    .port-item img{width:100%;height:200px;object-fit:cover;display:block}
-    .port-item .info{padding:14px}
+    /* PORTFOLIO */
+    .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;max-width:var(--max-width);margin:18px auto;padding:0 20px}
+    .port-item{background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--card-shadow);transition:transform .35s}
+    .port-item img{width:100%;height:180px;object-fit:cover}
+    .port-item .info{padding:12px}
     .port-item h3{color:var(--primary-1);font-weight:800}
 
-    /* ---------- SKILLS ---------- */
-    .skills{max-width:900px;margin:0 auto;padding:6px 20px;display:flex;flex-direction:column;gap:18px}
+    /* SKILLS */
+    .skills{max-width:900px;margin:0 auto;padding:6px 20px;display:flex;flex-direction:column;gap:14px}
     .skill-row{display:flex;justify-content:space-between;align-items:center}
-    .skill-bar{background:#eee;height:12px;border-radius:10px;overflow:hidden;width:70%}
+    .skill-bar{background:#eee;height:12px;border-radius:10px;overflow:hidden;width:68%}
     .skill-progress{height:100%;background:linear-gradient(90deg,var(--primary-1),var(--primary-2));width:0;transition:width 1.6s ease}
 
-    /* ---------- TESTIMONIALS ---------- */
-    .testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;max-width:var(--max-width);margin:18px auto;padding:0 20px}
-    .t-card{background:#fff;padding:18px;border-radius:14px;box-shadow:var(--card-shadow)}
+    /* TESTIMONIALS */
+    .testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;max-width:var(--max-width);margin:18px auto;padding:0 20px}
+    .t-card{background:#fff;padding:14px;border-radius:12px;box-shadow:var(--card-shadow)}
 
-    /* ---------- CONTACT ---------- */
-    .contact-card{max-width:820px;margin:0 auto;background:linear-gradient(135deg,var(--primary-1),var(--primary-2));color:#fff;padding:24px;border-radius:14px;box-shadow:0 18px 50px rgba(61,30,109,0.18);text-align:center}
-    .contact-card a{display:inline-flex;gap:10px;align-items:center;background:#25d366;padding:12px 18px;border-radius:999px;color:#fff;font-weight:800;text-decoration:none;margin-top:12px}
+    /* CONTACT */
+    .contact-card{max-width:820px;margin:0 auto;background:linear-gradient(135deg,var(--primary-1),var(--primary-2));color:#fff;padding:18px;border-radius:12px;box-shadow:0 18px 50px rgba(61,30,109,0.18);text-align:center}
+    .contact-card a{display:inline-flex;gap:10px;align-items:center;background:var(--accent);padding:10px 16px;border-radius:999px;color:#fff;font-weight:800;text-decoration:none;margin-top:12px}
 
-    /* ---------- FOOTER ---------- */
-    footer{background:var(--primary-1);color:#fff;padding:36px 0;text-align:center}
+    /* FOOTER */
+    footer{background:var(--primary-1);color:#fff;padding:28px 0;text-align:center}
     .socials{display:flex;gap:12px;justify-content:center;margin-top:12px}
 
-    /* ---------- RTL support ---------- */
-    [dir="rtl"] body { direction: rtl; }
+    /* RTL support */
+    [dir="rtl"] body{direction:rtl}
     [dir="rtl"] .nav-links{direction:rtl}
     [dir="rtl"] .svc-card .body{text-align:right}
     [dir="rtl"] .prod-body li{flex-direction:row-reverse}
     [dir="rtl"] .skill-row{direction:rtl}
-
-    /* ---------- Responsive tweaks ---------- */
     @media (max-width:760px){
-      .brand-name{font-size:2.6rem}
-      .hero{padding:50px 0}
-      nav .wrap{flex-direction:column;align-items:stretch;gap:10px}
-      .nav-links{justify-content:center;flex-wrap:wrap}
+      .brand-name{font-size:2.4rem}
+      .hero{padding:48px 0}
     }
   </style>
 </head>
 <body lang="en" dir="ltr">
   <!-- NAV -->
   <nav aria-label="Primary">
-    <div class="container wrap">
-      <div style="display:flex;gap:16px;align-items:center">
+    <div class="container wrap" style="display:flex;align-items:center;justify-content:space-between">
+      <div style="display:flex;gap:14px;align-items:center">
         <div class="brand">DETAILS</div>
       </div>
 
       <div style="display:flex;align-items:center;gap:14px">
         <div class="nav-links" role="navigation" aria-label="Main">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#portfolio">Portfolio</a>
-          <a href="#production-services">Production</a>
-          <a href="#contact">Contact</a>
+          <a href="#home" data-key="nav_home">Home</a>
+          <a href="#about" data-key="nav_about">About</a>
+          <a href="#services" data-key="nav_services">Services</a>
+          <a href="#portfolio" data-key="nav_portfolio">Portfolio</a>
+          <a href="#production-services" data-key="nav_production">Production</a>
+          <a href="#contact" data-key="nav_contact">Contact</a>
         </div>
 
         <div class="lang-switch" role="tablist" aria-label="Language switch">
@@ -177,97 +164,97 @@
   <!-- HERO -->
   <header id="home" class="hero" role="banner">
     <div class="inner container">
-      <div class="brand-name">DETAILS</div>
-      <h1 class="hero-title">Andrew Nabil — Creative Designer</h1>
-      <p class="tagline">Precision in Every Pixel, Impact in Every Design</p>
-      <p class="experience">11 Years of Creative Excellence</p>
-      <a class="cta" href="#portfolio">View My Work</a>
+      <div class="brand-name" data-key="brand">DETAILS</div>
+      <h1 class="hero-title" data-key="hero_title">Andrew Nabil — Creative Designer</h1>
+      <p class="tagline" data-key="hero_tagline">Precision in Every Pixel, Impact in Every Design</p>
+      <p class="experience" data-key="hero_experience">11 Years of Creative Excellence</p>
+      <a class="cta" href="#portfolio" data-key="hero_cta">View My Work</a>
     </div>
   </header>
 
   <!-- ABOUT -->
-  <section id="about" class="about">
+  <section id="about" class="about" aria-labelledby="about-title">
     <div class="container">
-      <h2 class="section-title">About Details</h2>
-      <p class="section-sub">Where Creativity Meets Precision</p>
+      <h2 id="about-title" class="section-title" data-key="about_title">About Details</h2>
+      <p class="section-sub" data-key="about_sub">Where Creativity Meets Precision</p>
       <div class="content">
-        <p><strong>Details</strong> is not just a design studio—it's a philosophy. Founded by <strong>Andrew Nabil</strong>, a creative designer with over 11 years of professional experience, Details specializes in transforming brands through meticulous visual storytelling and innovative design solutions.</p>
-        <p>We combine artistic vision with strategic thinking to create designs that don't only look beautiful but drive results. Services range from brand identity, motion graphics, video production to full production & printing solutions.</p>
+        <p data-key="about_p1"><strong>Details</strong> is not just a design studio—it's a philosophy. Founded by <strong>Andrew Nabil</strong>, Details specializes in transforming brands through meticulous visual storytelling and innovative design solutions.</p>
+        <p data-key="about_p2">We combine artistic vision with strategic thinking to create designs that not only look beautiful but also drive results. Our services include brand identity, motion graphics, video production, and production & printing solutions.</p>
 
-        <div class="services-badges" aria-hidden="true">
-          <span class="service-badge">Brand Identity</span>
-          <span class="service-badge">Video Editing</span>
-          <span class="service-badge">Motion Graphics</span>
-          <span class="service-badge">Printing & Production</span>
+        <div class="about-services" style="margin-top:18px">
+          <span class="service-badge" data-key="badge_identity">Brand Identity</span>
+          <span class="service-badge" data-key="badge_video">Video Editing</span>
+          <span class="service-badge" data-key="badge_motion">Motion Graphics</span>
+          <span class="service-badge" data-key="badge_print">Printing & Production</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- OUR SERVICES (visual cards) -->
+  <!-- SERVICES GRID -->
   <section id="services" class="alt" aria-labelledby="services-title">
     <div class="container">
-      <h2 id="services-title" class="section-title">Our Services — خدماتنا</h2>
-      <p class="section-sub">What we do best / أفضل ما نقدمه</p>
+      <h2 id="services-title" class="section-title" data-key="services_title">Our Services — خدماتنا</h2>
+      <p class="section-sub" data-key="services_sub">What we do best / أفضل ما نقدمه</p>
 
       <div class="services-grid" aria-hidden="false">
         <!-- Printing Materials -->
         <article class="svc-card" aria-labelledby="svc-printing">
-          <div class="thumb"><img loading="lazy" src="https://images.unsplash.com/photo-1585386959984-a41552231693?w=1200&q=60&auto=format&fit=crop" alt="Printing Materials"></div>
+          <div class="thumb"><img loading="lazy" src="https://images.unsplash.com/photo-1585386959984-a41552231693?w=1400&q=60&auto=format&fit=crop" alt="Printing Materials"></div>
           <div class="body">
-            <h3 id="svc-printing">Printing Materials</h3>
-            <div class="sub">المطبوعات — Brochures, Catalogs, Flyers, Business Cards</div>
-            <p>Design & high-quality production for marketing materials that impress clients and audiences.</p>
+            <h3 id="svc-printing" data-key="svc_printing">Printing Materials</h3>
+            <div class="sub" data-key="svc_printing_sub">المطبوعات — Brochures, Catalogs, Flyers, Business Cards</div>
+            <p data-key="svc_printing_p">Design & high-quality production for marketing materials that impress clients and audiences.</p>
           </div>
         </article>
 
         <!-- Engraving -->
         <article class="svc-card" aria-labelledby="svc-engraving">
-          <div class="thumb"><img loading="lazy" src="https://images.unsplash.com/photo-1581094370160-9f57fc2b63d4?w=1200&q=60&auto=format&fit=crop" alt="Engraving"></div>
+          <div class="thumb"><img loading="lazy" src="https://images.unsplash.com/photo-1581094370160-9f57fc2b63d4?w=1400&q=60&auto=format&fit=crop" alt="Engraving"></div>
           <div class="body">
-            <h3 id="svc-engraving">Engraving</h3>
-            <div class="sub">الحفر — Metal, Wood, Acrylic</div>
-            <p>Precision engraving for keepsakes, awards, and branded items on multiple materials.</p>
+            <h3 id="svc-engraving" data-key="svc_engraving">Engraving</h3>
+            <div class="sub" data-key="svc_engraving_sub">الحفر — Metal, Wood, Acrylic</div>
+            <p data-key="svc_engraving_p">Precision engraving for keepsakes, awards, and branded items on multiple materials.</p>
           </div>
         </article>
 
         <!-- Laser Cutting -->
         <article class="svc-card" aria-labelledby="svc-laser">
-          <div class="thumb"><img loading="lazy" src="https://images.unsplash.com/photo-1596075780750-81249df16d1a?w=1200&q=60&auto=format&fit=crop" alt="Laser Cutting"></div>
+          <div class="thumb"><img loading="lazy" src="https://images.unsplash.com/photo-1596075780750-81249df16d1a?w=1400&q=60&auto=format&fit=crop" alt="Laser Cutting"></div>
           <div class="body">
-            <h3 id="svc-laser">Laser Cutting</h3>
-            <div class="sub">القص بالليزر — Precise Multi-material Cutting</div>
-            <p>High-precision laser cutting for prototypes, signage, decorations and complex shapes.</p>
+            <h3 id="svc-laser" data-key="svc_laser">Laser Cutting</h3>
+            <div class="sub" data-key="svc_laser_sub">القص بالليزر — Precise Multi-material Cutting</div>
+            <p data-key="svc_laser_p">High-precision laser cutting for prototypes, signage, decorations and complex shapes.</p>
           </div>
         </article>
 
         <!-- Promotional Gifts -->
         <article class="svc-card" aria-labelledby="svc-gifts">
-          <div class="thumb"><img loading="lazy" src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=1200&q=60&auto=format&fit=crop" alt="Promotional Gifts"></div>
+          <div class="thumb"><img loading="lazy" src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=1400&q=60&auto=format&fit=crop" alt="Promotional Gifts"></div>
           <div class="body">
-            <h3 id="svc-gifts">Promotional Gifts</h3>
-            <div class="sub">الهدايا الدعائية — Pens, Mugs, Medals, Trophies</div>
-            <p>Custom promotional items with branding that strengthen recall and leave great impressions.</p>
+            <h3 id="svc-gifts" data-key="svc_gifts">Promotional Gifts</h3>
+            <div class="sub" data-key="svc_gifts_sub">الهدايا الدعائية — Pens, Mugs, Medals, Trophies</div>
+            <p data-key="svc_gifts_p">Custom promotional items with branding that strengthen recall and leave great impressions.</p>
           </div>
         </article>
 
         <!-- Signage & Stands -->
         <article class="svc-card" aria-labelledby="svc-signage">
-          <div class="thumb"><img loading="lazy" src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1200&q=60&auto=format&fit=crop" alt="Signage & Stands"></div>
+          <div class="thumb"><img loading="lazy" src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1400&q=60&auto=format&fit=crop" alt="Signage & Stands"></div>
           <div class="body">
-            <h3 id="svc-signage">Signage & Stands</h3>
-            <div class="sub">اللافتات والستاندات — Outdoor signs & exhibition stands</div>
-            <p>From illuminated facades to portable exhibition stands — we design and produce for impact.</p>
+            <h3 id="svc-signage" data-key="svc_signage">Signage & Stands</h3>
+            <div class="sub" data-key="svc_signage_sub">اللافتات والستاندات — Outdoor signs & exhibition stands</div>
+            <p data-key="svc_signage_p">From illuminated facades to portable exhibition stands — we design and produce for impact.</p>
           </div>
         </article>
 
         <!-- Fabric Printing -->
         <article class="svc-card" aria-labelledby="svc-fabric">
-          <div class="thumb"><img loading="lazy" src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=1200&q=60&auto=format&fit=crop" alt="Fabric Printing"></div>
+          <div class="thumb"><img loading="lazy" src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=1400&q=60&auto=format&fit=crop" alt="Fabric Printing"></div>
           <div class="body">
-            <h3 id="svc-fabric">Fabric Printing</h3>
-            <div class="sub">الطباعة على القماش — T-shirts, Flags, Banners</div>
-            <p>Durable, vibrant textile printing for promotional apparel and event banners.</p>
+            <h3 id="svc-fabric" data-key="svc_fabric">Fabric Printing</h3>
+            <div class="sub" data-key="svc_fabric_sub">الطباعة على القماش — T-shirts, Flags, Banners</div>
+            <p data-key="svc_fabric_p">Durable, vibrant textile printing for promotional apparel and event banners.</p>
           </div>
         </article>
       </div>
@@ -277,47 +264,47 @@
   <!-- PORTFOLIO -->
   <section id="portfolio">
     <div class="container">
-      <h2 class="section-title">Portfolio</h2>
-      <p class="section-sub">A showcase of creative excellence</p>
+      <h2 class="section-title" data-key="portfolio_title">Portfolio</h2>
+      <p class="section-sub" data-key="portfolio_sub">A showcase of creative excellence / عرض للتميز الإبداعي</p>
 
       <div class="portfolio-grid">
         <article class="port-item">
-          <img loading="lazy" src="https://picsum.photos/600/400?random=21" alt="Brand Identity">
-          <div class="info"><h3>Brand Identity Design</h3><p>Complete identity systems: logo, typography and color.</p></div>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200&q=60&auto=format&fit=crop" alt="Brand Identity">
+          <div class="info"><h3 data-key="port_1_title">Brand Identity Design</h3><p data-key="port_1_desc">Complete visual identity: logo, color system and typography.</p></div>
         </article>
         <article class="port-item">
-          <img loading="lazy" src="https://picsum.photos/600/400?random=22" alt="Social Media Campaign">
-          <div class="info"><h3>Social Media Campaign</h3><p>Campaign visuals tailored for higher engagement & conversions.</p></div>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?w=1200&q=60&auto=format&fit=crop" alt="Social Media Campaign">
+          <div class="info"><h3 data-key="port_2_title">Social Media Campaign</h3><p data-key="port_2_desc">Campaign visuals tailored for high engagement.</p></div>
         </article>
         <article class="port-item">
-          <img loading="lazy" src="https://picsum.photos/600/400?random=23" alt="Motion Graphics">
-          <div class="info"><h3>Motion Graphics</h3><p>Animated content to tell brand stories.</p></div>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&q=60&auto=format&fit=crop" alt="Motion Graphics">
+          <div class="info"><h3 data-key="port_3_title">Motion Graphics</h3><p data-key="port_3_desc">Animated content to tell brand stories.</p></div>
         </article>
         <article class="port-item">
-          <img loading="lazy" src="https://picsum.photos/600/400?random=24" alt="Packaging">
-          <div class="info"><h3>Packaging Design</h3><p>Innovative packaging that sells on shelf.</p></div>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=1200&q=60&auto=format&fit=crop" alt="Packaging">
+          <div class="info"><h3 data-key="port_4_title">Packaging Design</h3><p data-key="port_4_desc">Packaging that stands out on shelf.</p></div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- PRODUCTION & PRINTING DETAILED -->
+  <!-- PRODUCTION DETAILED -->
   <section id="production-services" class="alt">
     <div class="container">
-      <h2 class="section-title">Production & Printing Services</h2>
-      <p class="section-sub">Complete solutions for all your production needs</p>
+      <h2 class="section-title" data-key="prod_title">Production & Printing Services</h2>
+      <p class="section-sub" data-key="prod_sub">Complete solutions for all your production needs</p>
 
       <div class="prod-grid">
         <article class="prod-card">
           <div class="prod-top"><img loading="lazy" src="https://images.unsplash.com/photo-1612538498456-e861df91d4d0?w=1200&q=60&auto=format&fit=crop" alt="Printing"></div>
           <div class="prod-body">
-            <h4>Printing Materials — المطبوعات</h4>
-            <p class="desc">High-quality brochures, catalogs, flyers and premium business cards.</p>
+            <h4 data-key="prod_1_title">Printing Materials — المطبوعات</h4>
+            <p class="desc" data-key="prod_1_desc">High-quality brochures, catalogs, flyers and premium business cards.</p>
             <ul>
-              <li>Brochures & Catalogs</li>
-              <li>Flyers & Posters</li>
-              <li>Premium Business Cards</li>
-              <li>Letterheads & Envelopes</li>
+              <li data-key="prod_1_li1">Brochures & Catalogs</li>
+              <li data-key="prod_1_li2">Flyers & Posters</li>
+              <li data-key="prod_1_li3">Premium Business Cards</li>
+              <li data-key="prod_1_li4">Letterheads & Envelopes</li>
             </ul>
           </div>
         </article>
@@ -325,13 +312,13 @@
         <article class="prod-card">
           <div class="prod-top"><img loading="lazy" src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1200&q=60&auto=format&fit=crop" alt="Engraving"></div>
           <div class="prod-body">
-            <h4>Engraving — الحفر</h4>
-            <p class="desc">Precise engraving on metal, wood, acrylic and glass.</p>
+            <h4 data-key="prod_2_title">Engraving — الحفر</h4>
+            <p class="desc" data-key="prod_2_desc">Precise engraving on metal, wood, acrylic and glass.</p>
             <ul>
-              <li>Metal Engraving</li>
-              <li>Wood Engraving</li>
-              <li>Acrylic Engraving</li>
-              <li>Glass & Crystal Engraving</li>
+              <li data-key="prod_2_li1">Metal Engraving</li>
+              <li data-key="prod_2_li2">Wood Engraving</li>
+              <li data-key="prod_2_li3">Acrylic Engraving</li>
+              <li data-key="prod_2_li4">Glass & Crystal Engraving</li>
             </ul>
           </div>
         </article>
@@ -339,13 +326,13 @@
         <article class="prod-card">
           <div class="prod-top"><img loading="lazy" src="https://images.unsplash.com/photo-1565688534245-05d6b5be184a?w=1200&q=60&auto=format&fit=crop" alt="Laser Cutting"></div>
           <div class="prod-body">
-            <h4>Laser Cutting — القص بالليزر</h4>
-            <p class="desc">High-precision laser cutting for complex designs and prototypes.</p>
+            <h4 data-key="prod_3_title">Laser Cutting — القص بالليزر</h4>
+            <p class="desc" data-key="prod_3_desc">High-precision laser cutting for complex designs and prototypes.</p>
             <ul>
-              <li>Precise multi-material cutting</li>
-              <li>Complex designs & decorations</li>
-              <li>Wood & Acrylic cutting</li>
-              <li>Prototypes & Models</li>
+              <li data-key="prod_3_li1">Precise multi-material cutting</li>
+              <li data-key="prod_3_li2">Complex designs & decorations</li>
+              <li data-key="prod_3_li3">Wood & Acrylic cutting</li>
+              <li data-key="prod_3_li4">Prototypes & Models</li>
             </ul>
           </div>
         </article>
@@ -353,13 +340,13 @@
         <article class="prod-card">
           <div class="prod-top"><img loading="lazy" src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=1200&q=60&auto=format&fit=crop" alt="Promotional Gifts"></div>
           <div class="prod-body">
-            <h4>Promotional Gifts — الهدايا الدعائية</h4>
-            <p class="desc">Custom pens, mugs, medals and awards — branded with care.</p>
+            <h4 data-key="prod_4_title">Promotional Gifts — الهدايا الدعائية</h4>
+            <p class="desc" data-key="prod_4_desc">Custom pens, mugs, medals and awards — branded with care.</p>
             <ul>
-              <li>Premium printed pens</li>
-              <li>Custom mugs & thermoses</li>
-              <li>Medals & Awards</li>
-              <li>Promotional bags & accessories</li>
+              <li data-key="prod_4_li1">Premium printed pens</li>
+              <li data-key="prod_4_li2">Custom mugs & thermoses</li>
+              <li data-key="prod_4_li3">Medals & Awards</li>
+              <li data-key="prod_4_li4">Promotional bags & accessories</li>
             </ul>
           </div>
         </article>
@@ -367,13 +354,13 @@
         <article class="prod-card">
           <div class="prod-top"><img loading="lazy" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=60&auto=format&fit=crop" alt="Signage"></div>
           <div class="prod-body">
-            <h4>Signage & Stands — اللافتات والستاندات</h4>
-            <p class="desc">Illuminated outdoor signs and portable exhibition stands.</p>
+            <h4 data-key="prod_5_title">Signage & Stands — اللافتات والستاندات</h4>
+            <p class="desc" data-key="prod_5_desc">Illuminated outdoor signs and portable exhibition stands.</p>
             <ul>
-              <li>Illuminated outdoor signs</li>
-              <li>Portable exhibition stands</li>
-              <li>Roll-up & X-banner</li>
-              <li>Directional & Wayfinding signs</li>
+              <li data-key="prod_5_li1">Illuminated outdoor signs</li>
+              <li data-key="prod_5_li2">Portable exhibition stands</li>
+              <li data-key="prod_5_li3">Roll-up & X-banner</li>
+              <li data-key="prod_5_li4">Directional & Wayfinding signs</li>
             </ul>
           </div>
         </article>
@@ -381,19 +368,19 @@
         <article class="prod-card">
           <div class="prod-top"><img loading="lazy" src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=1200&q=60&auto=format&fit=crop" alt="Fabric Printing"></div>
           <div class="prod-body">
-            <h4>Fabric Printing — الطباعة على القماش</h4>
-            <p class="desc">Durable textile printing: t-shirts, flags, and large fabric banners.</p>
+            <h4 data-key="prod_6_title">Fabric Printing — الطباعة على القماش</h4>
+            <p class="desc" data-key="prod_6_desc">Durable textile printing: t-shirts, flags, and large fabric banners.</p>
             <ul>
-              <li>Printed T-shirts & Polos</li>
-              <li>Promotional flags & banners</li>
-              <li>Large fabric banners</li>
-              <li>Corporate uniforms</li>
+              <li data-key="prod_6_li1">Printed T-shirts & Polos</li>
+              <li data-key="prod_6_li2">Promotional flags & banners</li>
+              <li data-key="prod_6_li3">Large fabric banners</li>
+              <li data-key="prod_6_li4">Corporate uniforms</li>
             </ul>
           </div>
         </article>
       </div>
 
-      <div style="text-align:center;margin-top:22px">
+      <div style="text-align:center;margin-top:18px">
         <a class="cta" href="https://wa.me/201281081242?text=I'm%20interested%20in%20production%20services" target="_blank" rel="noopener">Request Free Consultation</a>
       </div>
     </div>
@@ -402,24 +389,24 @@
   <!-- SKILLS -->
   <section id="skills">
     <div class="container">
-      <h2 class="section-title">Skills & Expertise</h2>
-      <p class="section-sub">Mastery across creative tools</p>
+      <h2 class="section-title" data-key="skills_title">Skills & Expertise</h2>
+      <p class="section-sub" data-key="skills_sub">Mastery across creative tools</p>
 
       <div class="skills">
         <div>
-          <div class="skill-row"><strong>Adobe Photoshop</strong><strong>95%</strong></div>
+          <div class="skill-row"><strong data-key="skill_ps_name">Adobe Photoshop</strong><strong>95%</strong></div>
           <div class="skill-bar"><div class="skill-progress" data-width="95%"></div></div>
         </div>
         <div>
-          <div class="skill-row"><strong>Adobe Illustrator</strong><strong>95%</strong></div>
+          <div class="skill-row"><strong data-key="skill_ai_name">Adobe Illustrator</strong><strong>95%</strong></div>
           <div class="skill-bar"><div class="skill-progress" data-width="95%"></div></div>
         </div>
         <div>
-          <div class="skill-row"><strong>Premiere Pro</strong><strong>95%</strong></div>
+          <div class="skill-row"><strong data-key="skill_pr_name">Premiere Pro</strong><strong>95%</strong></div>
           <div class="skill-bar"><div class="skill-progress" data-width="95%"></div></div>
         </div>
         <div>
-          <div class="skill-row"><strong>After Effects</strong><strong>85%</strong></div>
+          <div class="skill-row"><strong data-key="skill_ae_name">After Effects</strong><strong>85%</strong></div>
           <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
         </div>
       </div>
@@ -429,20 +416,20 @@
   <!-- TESTIMONIALS -->
   <section id="testimonials" class="alt">
     <div class="container">
-      <h2 class="section-title">Client Testimonials</h2>
-      <p class="section-sub">What our clients say</p>
+      <h2 class="section-title" data-key="test_title">Client Testimonials</h2>
+      <p class="section-sub" data-key="test_sub">What our clients say</p>
 
       <div class="testimonials">
         <div class="t-card">
-          <p>"Working with Andrew and the Details team was an absolute pleasure. Their attention to detail and creative vision transformed our brand identity completely."</p>
+          <p data-key="test_1_quote">"Working with Andrew and the Details team was an absolute pleasure. Their attention to detail and creative vision transformed our brand identity completely."</p>
           <p><strong>Sarah Mitchell</strong> — Marketing Director, TechStart Inc.</p>
         </div>
         <div class="t-card">
-          <p>"Andrew's work on our social media campaign significantly increased engagement. A true creative professional!"</p>
+          <p data-key="test_2_quote">"Andrew's work on our social media campaign significantly increased engagement. A true creative professional!"</p>
           <p><strong>Omar Hassan</strong> — CEO, Momentum Digital</p>
         </div>
         <div class="t-card">
-          <p>"Details delivered exactly what we needed — a complete brand overhaul. Quality and sophistication."</p>
+          <p data-key="test_3_quote">"Details delivered exactly what we needed — a complete brand overhaul. Quality and sophistication."</p>
           <p><strong>Jennifer Rodriguez</strong> — Founder, Luxe Beauty Co.</p>
         </div>
       </div>
@@ -452,15 +439,15 @@
   <!-- CONTACT -->
   <section id="contact">
     <div class="container">
-      <h2 class="section-title">Get In Touch</h2>
-      <p class="section-sub">Let's create something amazing together</p>
+      <h2 class="section-title" data-key="contact_title">Get In Touch</h2>
+      <p class="section-sub" data-key="contact_sub">Let's create something amazing together</p>
 
       <div class="contact-card" role="region" aria-label="Contact">
-        <p style="font-size:1.05rem">📱 Phone: <strong>01281081242</strong></p>
-        <p style="font-size:1.05rem">📧 Email: <strong>detailsagency1@gmail.com</strong></p>
-        <p style="font-size:1.05rem">📍 Location: <strong>Cairo, Egypt</strong></p>
+        <p data-key="contact_phone">📱 Phone: <strong>01281081242</strong></p>
+        <p data-key="contact_email">📧 Email: <strong>detailsagency1@gmail.com</strong></p>
+        <p data-key="contact_location">📍 Location: <strong>Egypt</strong></p>
 
-        <a href="https://wa.me/201281081242" target="_blank" rel="noopener"><span>💬</span> Chat on WhatsApp</a>
+        <a href="https://wa.me/201281081242" target="_blank" rel="noopener">💬 Contact on WhatsApp</a>
       </div>
     </div>
   </section>
@@ -468,23 +455,293 @@
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      <div style="font-size:1.8rem;font-weight:800">DETAILS</div>
-      <div style="opacity:0.9;margin-top:6px">Precision in Every Pixel, Impact in Every Design</div>
+      <div style="font-size:1.6rem;font-weight:800" data-key="footer_brand">DETAILS</div>
+      <div style="opacity:0.95;margin-top:6px" data-key="footer_tag">Precision in Every Pixel, Impact in Every Design</div>
       <div class="socials" aria-hidden="true" style="margin-top:12px">
         <a href="https://www.behance.net/andrown" target="_blank" rel="noopener">🎨</a>
         <a href="https://www.instagram.com/details.ads" target="_blank" rel="noopener">📷</a>
         <a href="https://www.facebook.com/profile.php?id=61557173985017" target="_blank" rel="noopener">📘</a>
         <a href="https://wa.me/201281081242" target="_blank" rel="noopener">💬</a>
       </div>
-      <div style="opacity:0.8;margin-top:14px">© <span id="year"></span> Details Design Studio. All rights reserved.</div>
+      <div style="opacity:0.85;margin-top:12px">© <span id="year"></span> Details Design Studio. All rights reserved.</div>
     </div>
   </footer>
 
   <script>
-    // Set current year
+    // ----- set current year -----
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // LANG SWITCH
+    // ----- translations (complete) -----
+    const translations = {
+      en: {
+        nav_home: "Home",
+        nav_about: "About",
+        nav_services: "Services",
+        nav_portfolio: "Portfolio",
+        nav_production: "Production",
+        nav_contact: "Contact",
+
+        hero_title: "Andrew Nabil — Creative Designer",
+        hero_tagline: "Precision in Every Pixel, Impact in Every Design",
+        hero_experience: "11 Years of Creative Excellence",
+        hero_cta: "View My Work",
+
+        about_title: "About Details",
+        about_sub: "Where Creativity Meets Precision",
+        about_p1: "<strong>Details</strong> is not just a design studio—it's a philosophy. Founded by <strong>Andrew Nabil</strong>, Details specializes in transforming brands through meticulous visual storytelling and innovative design solutions.",
+        about_p2: "We combine artistic vision with strategic thinking to create designs that not only look beautiful but also drive results. Our services include brand identity, motion graphics, video production, and production & printing solutions.",
+        badge_identity: "Brand Identity",
+        badge_video: "Video Editing",
+        badge_motion: "Motion Graphics",
+        badge_print: "Printing & Production",
+
+        services_title: "Our Services — خدماتنا",
+        services_sub: "What we do best / أفضل ما نقدمه",
+
+        svc_printing: "Printing Materials",
+        svc_printing_sub: "المطبوعات — Brochures, Catalogs, Flyers, Business Cards",
+        svc_printing_p: "Design & high-quality production for marketing materials that impress clients and audiences.",
+
+        svc_engraving: "Engraving",
+        svc_engraving_sub: "الحفر — Metal, Wood, Acrylic",
+        svc_engraving_p: "Precision engraving for keepsakes, awards, and branded items on multiple materials.",
+
+        svc_laser: "Laser Cutting",
+        svc_laser_sub: "القص بالليزر — Precise Multi-material Cutting",
+        svc_laser_p: "High-precision laser cutting for prototypes, signage, decorations and complex shapes.",
+
+        svc_gifts: "Promotional Gifts",
+        svc_gifts_sub: "الهدايا الدعائية — Pens, Mugs, Medals, Trophies",
+        svc_gifts_p: "Custom promotional items with branding that strengthen recall and leave great impressions.",
+
+        svc_signage: "Signage & Stands",
+        svc_signage_sub: "اللافتات والستاندات — Outdoor signs & exhibition stands",
+        svc_signage_p: "From illuminated facades to portable exhibition stands — we design and produce for impact.",
+
+        svc_fabric: "Fabric Printing",
+        svc_fabric_sub: "الطباعة على القماش — T-shirts, Flags, Banners",
+        svc_fabric_p: "Durable, vibrant textile printing for promotional apparel and event banners.",
+
+        portfolio_title: "Portfolio",
+        portfolio_sub: "A showcase of creative excellence / عرض للتميز الإبداعي",
+        port_1_title: "Brand Identity Design",
+        port_1_desc: "Complete visual identity: logo, color system and typography.",
+        port_2_title: "Social Media Campaign",
+        port_2_desc: "Campaign visuals tailored for high engagement.",
+        port_3_title: "Motion Graphics",
+        port_3_desc: "Animated content to tell brand stories.",
+        port_4_title: "Packaging Design",
+        port_4_desc: "Packaging that stands out on shelf.",
+
+        prod_title: "Production & Printing Services",
+        prod_sub: "Complete solutions for all your production needs",
+        prod_1_title: "Printing Materials — المطبوعات",
+        prod_1_desc: "High-quality brochures, catalogs, flyers and premium business cards.",
+        prod_1_li1: "Brochures & Catalogs",
+        prod_1_li2: "Flyers & Posters",
+        prod_1_li3: "Premium Business Cards",
+        prod_1_li4: "Letterheads & Envelopes",
+
+        prod_2_title: "Engraving — الحفر",
+        prod_2_desc: "Precise engraving on metal, wood, acrylic and glass.",
+        prod_2_li1: "Metal Engraving",
+        prod_2_li2: "Wood Engraving",
+        prod_2_li3: "Acrylic Engraving",
+        prod_2_li4: "Glass & Crystal Engraving",
+
+        prod_3_title: "Laser Cutting — القص بالليزر",
+        prod_3_desc: "High-precision laser cutting for complex designs and prototypes.",
+        prod_3_li1: "Precise multi-material cutting",
+        prod_3_li2: "Complex designs & decorations",
+        prod_3_li3: "Wood & Acrylic cutting",
+        prod_3_li4: "Prototypes & Models",
+
+        prod_4_title: "Promotional Gifts — الهدايا الدعائية",
+        prod_4_desc: "Custom pens, mugs, medals and awards — branded with care.",
+        prod_4_li1: "Premium printed pens",
+        prod_4_li2: "Custom mugs & thermoses",
+        prod_4_li3: "Medals & Awards",
+        prod_4_li4: "Promotional bags & accessories",
+
+        prod_5_title: "Signage & Stands — اللافتات والستاندات",
+        prod_5_desc: "Illuminated outdoor signs and portable exhibition stands.",
+        prod_5_li1: "Illuminated outdoor signs",
+        prod_5_li2: "Portable exhibition stands",
+        prod_5_li3: "Roll-up & X-banner",
+        prod_5_li4: "Directional & Wayfinding signs",
+
+        prod_6_title: "Fabric Printing — الطباعة على القماش",
+        prod_6_desc: "Durable textile printing: t-shirts, flags, and large fabric banners.",
+        prod_6_li1: "Printed T-shirts & Polos",
+        prod_6_li2: "Promotional flags & banners",
+        prod_6_li3: "Large fabric banners",
+        prod_6_li4: "Corporate uniforms",
+
+        skills_title: "Skills & Expertise",
+        skills_sub: "Mastery across creative tools",
+        skill_ps_name: "Adobe Photoshop",
+        skill_ai_name: "Adobe Illustrator",
+        skill_pr_name: "Premiere Pro",
+        skill_ae_name: "After Effects",
+
+        test_title: "Client Testimonials",
+        test_sub: "What our clients say",
+        test_1_quote: "\"Working with Andrew and the Details team was an absolute pleasure. Their attention to detail and creative vision transformed our brand identity completely.\"",
+        test_2_quote: "\"Andrew's work on our social media campaign significantly increased engagement. A true creative professional!\"",
+        test_3_quote: "\"Details delivered exactly what we needed — a complete brand overhaul. Quality and sophistication.\"",
+
+        contact_title: "Get In Touch",
+        contact_sub: "Let's create something amazing together",
+        contact_phone: "📱 Phone: <strong>01281081242</strong>",
+        contact_email: "📧 Email: <strong>detailsagency1@gmail.com</strong>",
+        contact_location: "📍 Location: <strong>Egypt</strong>",
+
+        footer_brand: "DETAILS",
+        footer_tag: "Precision in Every Pixel, Impact in Every Design"
+      },
+      ar: {
+        nav_home: "الرئيسية",
+        nav_about: "عن Details",
+        nav_services: "خدماتنا",
+        nav_portfolio: "معرض الأعمال",
+        nav_production: "الإنتاج",
+        nav_contact: "تواصل",
+
+        hero_title: "أندرو نبيل — مصمم مبدع",
+        hero_tagline: "دقة في كل بكسل، تأثير في كل تصميم",
+        hero_experience: "11 عاماً من التميز الإبداعي",
+        hero_cta: "شاهد أعمالي",
+
+        about_title: "عن Details",
+        about_sub: "حيث يلتقي الإبداع بالدقة",
+        about_p1: "<strong>Details</strong> ليست مجرد استوديو تصميم؛ إنها فلسفة. أسسها <strong>أندرو نبيل</strong>، وتختص بتحويل العلامات التجارية من خلال السرد البصري الدقيق والحلول التصميمية المبتكرة.",
+        about_p2: "نمزج بين الرؤية الفنية والتفكير الاستراتيجي لصنع تصاميم ليست جميلة فقط، بل تحقق نتائج ماسة. خدماتنا تشمل الهوية البصرية، الموشن جرافيك، إنتاج الفيديو، وحلول الإنتاج والطباعة.",
+        badge_identity: "الهوية البصرية",
+        badge_video: "مونتاج الفيديو",
+        badge_motion: "الموشن جرافيك",
+        badge_print: "الطباعة والإنتاج",
+
+        services_title: "خدماتنا — Our Services",
+        services_sub: "أفضل ما نقدمه / What we do best",
+
+        svc_printing: "المطبوعات",
+        svc_printing_sub: "المطبوعات — بروشورات، كتالوجات، فلايرز، كروت شخصية",
+        svc_printing_p: "تصميم وإنتاج عالي الجودة للمواد التسويقية التي تترك انطباعاً قوياً.",
+
+        svc_engraving: "الحفر",
+        svc_engraving_sub: "الحفر — معادن، خشب، أكريليك",
+        svc_engraving_p: "حفر دقيق للهدايا التذكارية، الدروع، والمنتجات المميزة على مواد متعددة.",
+
+        svc_laser: "القص بالليزر",
+        svc_laser_sub: "القص بالليزر — قص دقيق على مواد متعددة",
+        svc_laser_p: "قص بالليزر عالي الدقة للنماذج، اللافتات، والديكورات المعقدة.",
+
+        svc_gifts: "الهدايا الدعائية",
+        svc_gifts_sub: "الهدايا الدعائية — أقلام، أكواب، ميداليات، دروع",
+        svc_gifts_p: "هدايا ترويجية مخصصة بعلامتك التجارية لتعزيز التذكر وترك أثر مميز.",
+
+        svc_signage: "اللافتات والستاندات",
+        svc_signage_sub: "اللافتات والستاندات — لافتات خارجية وستاندات معارض",
+        svc_signage_p: "من واجهات مضيئة إلى ستاندات متنقلة — نصمم وننتج ليظهر عملك بأفضل شكل.",
+
+        svc_fabric: "الطباعة على القماش",
+        svc_fabric_sub: "الطباعة على القماش — تيشيرتات، أعلام، بنرات",
+        svc_fabric_p: "طباعة نسيجية زاهية وثابتة للتيشيرتات ومواد الفعاليات.",
+
+        portfolio_title: "معرض الأعمال",
+        portfolio_sub: "عرض للتميز الإبداعي / A showcase of creative excellence",
+        port_1_title: "تصميم الهوية البصرية",
+        port_1_desc: "أنظمة هوية كاملة: شعار، نظام ألوان وخطوط.",
+        port_2_title: "حملة سوشيال ميديا",
+        port_2_desc: "تصاميم لحملات تزيد التفاعل.",
+        port_3_title: "موشن جرافيك",
+        port_3_desc: "محتوى متحرك لرواية قصة العلامة.",
+        port_4_title: "تصميم التغليف",
+        port_4_desc: "تغليف مبتكر يجذب المستهلك.",
+
+        prod_title: "خدمات الإنتاج والطباعة",
+        prod_sub: "حلول متكاملة لجميع احتياجات الإنتاج",
+        prod_1_title: "المطبوعات — Printing Materials",
+        prod_1_desc: "بروشورات، كتالوجات، فلايرز وكروت شخصية عالية الجودة.",
+        prod_1_li1: "بروشورات وكتالوجات",
+        prod_1_li2: "فلايرز وملصقات",
+        prod_1_li3: "كروت شخصية فاخرة",
+        prod_1_li4: "أوراق رسمية ومظاريف",
+
+        prod_2_title: "الحفر — Engraving",
+        prod_2_desc: "حفر دقيق على المعادن، الخشب، الأكريليك والزجاج.",
+        prod_2_li1: "حفر على المعادن",
+        prod_2_li2: "حفر على الخشب",
+        prod_2_li3: "حفر على الأكريليك",
+        prod_2_li4: "حفر على الزجاج والكريستال",
+
+        prod_3_title: "القص بالليزر — Laser Cutting",
+        prod_3_desc: "قص بالليزر عالي الدقة للتصاميم المعقدة والنماذج.",
+        prod_3_li1: "قص دقيق للمواد المختلفة",
+        prod_3_li2: "تصاميم وديكورات معقدة",
+        prod_3_li3: "قص الخشب والأكريليك",
+        prod_3_li4: "نماذج أولية وماكيتات",
+
+        prod_4_title: "الهدايا الدعائية — Promotional Gifts",
+        prod_4_desc: "أقلام، أكواب، ميداليات ودروع — مع شعارك.",
+        prod_4_li1: "أقلام مطبوعة فاخرة",
+        prod_4_li2: "أكواب ومفارش مخصصة",
+        prod_4_li3: "ميداليات ودروع تكريم",
+        prod_4_li4: "حقائب وإكسسوارات دعائية",
+
+        prod_5_title: "اللافتات والستاندات — Signage & Stands",
+        prod_5_desc: "لافتات خارجية مضيئة وستاندات معارض متنقلة.",
+        prod_5_li1: "لافتات خارجية مضيئة",
+        prod_5_li2: "ستاندات معارض متنقلة",
+        prod_5_li3: "رول أب وإكس بانر",
+        prod_5_li4: "لوحات إرشادية وتوجيهية",
+
+        prod_6_title: "الطباعة على القماش — Fabric Printing",
+        prod_6_desc: "طباعة نسيجية متينة: تيشيرتات، أعلام، وبنرات قماش.",
+        prod_6_li1: "تيشيرتات وبولو مطبوعة",
+        prod_6_li2: "أعلام وبنرات دعائية",
+        prod_6_li3: "بنرات قماش كبيرة",
+        prod_6_li4: "زي موحد للشركات",
+
+        skills_title: "المهارات والخبرات",
+        skills_sub: "إتقان الأدوات الإبداعية",
+        skill_ps_name: "أدوبي فوتوشوب",
+        skill_ai_name: "أدوبي إليستريتور",
+        skill_pr_name: "أدوبي بريمير",
+        skill_ae_name: "أدوبي أفتر إيفكتس",
+
+        test_title: "آراء العملاء",
+        test_sub: "ماذا يقول عملاؤنا",
+        test_1_quote: "\"العمل مع أندرو وفريق Details كان ممتعًا للغاية. اهتمامهم بالتفاصيل ورؤيتهم الإبداعية غيرت هويتنا بالكامل.\"",
+        test_2_quote: "\"عمل أندرو على حملة السوشيال ميديا زاد التفاعل بشكل كبير. محترف حقيقي!\"",
+        test_3_quote: "\"قدموا لنا ما نحتاجه بالضبط — تجديد كامل للعلامة. جودة ورقي.\"",
+
+        contact_title: "تواصل معنا",
+        contact_sub: "دعنا نصنع شيئاً مذهلاً معاً",
+        contact_phone: "📱 هاتف: <strong>01281081242</strong>",
+        contact_email: "📧 البريد الإلكتروني: <strong>detailsagency1@gmail.com</strong>",
+        contact_location: "📍 الموقع: <strong>مصر</strong>",
+
+        footer_brand: "DETAILS",
+        footer_tag: "دقة في كل بكسل، تأثير في كل تصميم"
+      }
+    };
+
+    // helper: set text for all elements that have data-key attribute
+    function applyTranslations(lang){
+      document.querySelectorAll('[data-key]').forEach(el=>{
+        const key = el.getAttribute('data-key');
+        if(!key) return;
+        const text = translations[lang] && translations[lang][key];
+        if(text !== undefined){
+          // if element is a block that contains HTML tags in translation (like about p) allow innerHTML
+          if(/<\/?[a-z][\s\S]*>/i.test(text)) el.innerHTML = text;
+          else el.textContent = text;
+        }
+      });
+    }
+
+    // set language toggling with data-lang on buttons
     const langBtns = document.querySelectorAll('.lang-btn');
     function setLang(lang){
       const html = document.documentElement;
@@ -502,62 +759,41 @@
         b.classList.toggle('active', b.dataset.lang === lang);
         b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false');
       });
-      // Optional: translate hero text quickly (can expand)
-      if(lang === 'ar'){
-        document.querySelector('.hero-title').textContent = 'أندرو نبيل — مصمم مبدع';
-        document.querySelector('.tagline').textContent = 'دقة في كل بكسل، تأثير في كل تصميم';
-        document.querySelector('.experience').textContent = '11 عاماً من التميز الإبداعي';
-        document.querySelector('.cta').textContent = 'شاهد أعمالي';
-      } else {
-        document.querySelector('.hero-title').textContent = 'Andrew Nabil — Creative Designer';
-        document.querySelector('.tagline').textContent = 'Precision in Every Pixel, Impact in Every Design';
-        document.querySelector('.experience').textContent = '11 Years of Creative Excellence';
-        document.querySelector('.cta').textContent = 'View My Work';
-      }
+      applyTranslations(lang);
     }
-    langBtns.forEach(b=>{
-      b.addEventListener('click', ()=> setLang(b.dataset.lang));
-    });
+    langBtns.forEach(b=> b.addEventListener('click', ()=> setLang(b.dataset.lang)));
 
-    // Smooth internal link scroll
+    // set default language EN
+    setLang('en');
+
+    // smooth scroll for internal links
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', function(e){
         const target = document.querySelector(this.getAttribute('href'));
-        if(target){
-          e.preventDefault();
-          target.scrollIntoView({behavior:'smooth',block:'start'});
-        }
+        if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
       });
     });
 
-    // Animate skill bars on scroll (simple)
+    // animate skill bars on scroll (simple)
     function revealSkills(){
       document.querySelectorAll('.skill-progress').forEach(el=>{
-        const w = el.getAttribute('data-width') || '80%';
-        el.style.width = w;
+        el.style.width = el.getAttribute('data-width') || '80%';
       });
     }
-    // trigger when skills section visible
     let skillsDone=false;
     window.addEventListener('scroll', ()=>{
       const skillsSec = document.getElementById('skills');
       if(!skillsDone && skillsSec){
         const rect = skillsSec.getBoundingClientRect();
-        if(rect.top < window.innerHeight - 100){
-          revealSkills(); skillsDone=true;
-        }
+        if(rect.top < window.innerHeight - 100){ revealSkills(); skillsDone=true; }
       }
     });
-    // init progressive (in case already in view)
     setTimeout(()=>{ if(document.getElementById('skills').getBoundingClientRect().top < window.innerHeight) revealSkills(); },500);
 
-    // Accessibility: focus outlines on keyboard navigation
+    // keyboard focus outlines for accessibility
     document.body.addEventListener('keydown', function(e){
       if(e.key === 'Tab') document.documentElement.classList.add('show-focus');
     });
-
-    // Page ready — default language en
-    setLang('en');
   </script>
 </body>
 </html>
