@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details - Andrew Nabil | Creative Designer</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #3d1e6d 0%, #6b2fb5 100%);
+            color: #333;
+            line-height: 1.6;
+            transition: direction 0.3s ease;
+        }
+
+        [dir="rtl"] {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Arial;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 1.2rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(61, 30, 109, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            flex: 1;
+        }
+
+        nav a {
+            color: #3d1e6d;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: #6b2fb5;
+            transition: width 0.3s;
+        }
+
+        [dir="rtl"] nav a:after {
+            left: auto;
+            right: 0;
+        }
+
+        nav a:hover {
+            color: #6b2fb5;
+        }
+
+        nav a:hover:after {
+            width: 100%;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 0.5rem;
+            background: #f0f0f0;
+            padding: 0.5rem;
+            border-radius: 25px;
+            margin-left: 1rem;
+        }
+
+        [dir="rtl"] .lang-switch {
+            margin-left: 0;
+            margin-right: 1rem;
+        }
+
+        .lang-btn {
+            padding: 0.4rem 1rem;
+            border: none;
+            background: transparent;
+            color: #3d1e6d;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(135deg, #3d1e6d, #6b2fb5);
+            color: white;
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: rgba(61, 30, 109, 0.1);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand-name {
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: 3px;
+            animation: fadeInUp 1s ease;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .hero-content h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .experience {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: white;
+            color: #3d1e6d;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        section {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #3d1e6d;
+            font-weight: 800;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #6b2fb5;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            font-weight: 500;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            line-height: 2;
+            color: #444;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .services-section {
+            margin-top: 3rem;
+        }
+
+        .services-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #3d1e6d;
+            margin: 3rem 0 2rem;
+            font-weight: 700;
+        }
+
+        .services-list {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .service-badge {
+            background: linear-gradient(135deg, #3d1e6d, #6b2fb5);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(107, 47, 181, 0.3);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(61, 30, 109, 0.15);
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 45px rgba(61, 30, 109, 0.25);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-info {
+            padding: 2rem;
+        }
+
+        .portfolio-info h3 {
+            color: #3d1e6d;
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .portfolio-info p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        #production-services {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(61, 30, 109, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 45px rgba(61, 30, 109, 0.25);
+        }
+
+        .service-icon {
+            background: linear-gradient(135deg, #3d1e6d 0%, #6b2fb5 100%);
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+        }
+
+        .service-icon:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(61, 30, 109, 0.8) 0%, rgba(107, 47, 181, 0.8) 100%);
+            z-index: 1;
+        }
+
+        .service-icon-emoji {
+            position: relative;
+            z-index: 2;
+            font-size: 5rem;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+        }
+
+        .service-card:hover .service-icon:before {
+            background: linear-gradient(135deg, rgba(107, 47, 181, 0.9) 0%, rgba(139, 79, 214, 0.9) 100%);
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            color: #3d1e6d;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .service-description {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .service-items {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-items li {
+            padding: 0.6rem 0;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .service-items li:last-child {
+            border-bottom: none;
+        }
+
+        .service-items li:before {
+            content: '✓';
+            background: linear-gradient(135deg, #3d1e6d, #6b2fb5);
+            color: white;
+            min-width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .cta-button {
+            display: block;
+            margin: 3rem auto 0;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, #3d1e6d, #6b2fb5);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            max-width: 350px;
+            box-shadow: 0 8px 20px rgba(107, 47, 181, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(107, 47, 181, 0.5);
+        }
+
+        [dir="ltr"] .service-items li {
+            flex-direction: row;
+        }
+
+        [dir="rtl"] .service-items li {
+            flex-direction: row-reverse;
+        }
+
+        .skills-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skill {
+            margin-bottom: 2.5rem;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #3d1e6d;
+        }
+
+        .skill-bar {
+            background: #e8e4f3;
+            height: 14px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .skill-progress {
+            background: linear-gradient(90deg, #3d1e6d 0%, #6b2fb5 100%);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 2s ease;
+            box-shadow: 0 2px 8px rgba(107, 47, 181, 0.4);
+        }
+
+        .testimonials {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(61, 30, 109, 0.1);
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 5rem;
+            color: #e8e4f3;
+            font-family: Georgia, serif;
+        }
+
+        [dir="rtl"] .testimonial-card:before {
+            left: auto;
+            right: 20px;
+        }
+
+        .testimonial-text {
+            font-size: 1.05rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #3d1e6d;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-role {
+            color: #6b2fb5;
+            font-size: 0.95rem;
+        }
+
+        .contact-info {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-info p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        [dir="rtl"] .whatsapp-float {
+            right: auto;
+            left: 30px;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            }
+            50% {
+                box-shadow: 0 4px 30px rgba(37, 211, 102, 0.8);
+            }
+        }
+
+        footer {
+            background: #2c1654;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .footer-brand {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .footer-tagline {
+            font-style: italic;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.8rem;
+            transition: color 0.3s, transform 0.3s;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            color: #b794f6;
+            transform: translateY(-5px);
+        }
+
+        .footer-note {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .lang-switch {
+                margin: 0;
+            }
+            .brand-name {
+                font-size: 3rem;
+            }
+            .hero-content h1 {
+                font-size: 1.5rem;
+            }
+            .tagline {
+                font-size: 1.1rem;
+            }
+            h2 {
+                font-size: 2.2rem;
+            }
+            section {
+                padding: 4rem 5%;
+            }
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .service-icon {
+                height: 150px;
+            }
+            .service-icon-emoji {
+                font-size: 4rem;
+            }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 28px;
+                bottom: 20px;
+                right: 20px;
+            }
+            [dir="rtl"] .whatsapp-float {
+                right: auto;
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#production-services">Production</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="lang-switch">
+            <button class="lang-btn active" onclick="switchLang('en')">EN</button>
+            <button class="lang-btn" onclick="switchLang('ar')">AR</button>
+        </div>
+    </nav>
+
+    <a href="https://wa.me/201281081242?text=Hi%2C%20I'm%20interested%20in%20your%20design%20services" 
+       class="whatsapp-float" 
+       target="_blank">
+        💬
+    </a>
+
+    <div class="hero" id="home">
+        <div class="hero-content">
+            <div class="brand-name">DETAILS</div>
+            <h1 class="translatable" data-en="Andrew Nabil - Creative Designer" data-ar="أندرو نبيل - مصمم مبدع">Andrew Nabil - Creative Designer</h1>
+            <p class="tagline translatable" data-en="Precision in Every Pixel, Impact in Every Design" data-ar="دقة في كل بكسل، تأثير في كل تصميم">Precision in Every Pixel, Impact in Every Design</p>
+            <p class="experience translatable" data-en="11 Years of Creative Excellence" data-ar="11 عاماً من التميز الإبداعي">11 Years of Creative Excellence</p>
+            <a href="#portfolio" class="btn translatable" data-en="View My Work" data-ar="شاهد أعمالي">View My Work</a>
+        </div>
+    </div>
+
+    <section id="about">
+        <h2 class="translatable" data-en="About Details" data-ar="عن Details">About Details</h2>
+        <p class="section-subtitle translatable" data-en="Where Creativity Meets Precision" data-ar="حيث يلتقي الإبداع بالدقة">Where Creativity Meets Precision</p>
+        <div class="about-content">
+            <p><strong>Details</strong> is not just a design studio—it's a philosophy. Founded by <strong>Andrew Nabil</strong>, a creative designer with over 11 years of professional experience, Details specializes in transforming brands through meticulous visual storytelling and innovative design solutions.</p>
+            <p>At Details, we believe that exceptional design lies in the nuances—the careful selection of colors, the perfect balance of typography, and the strategic placement of every element. Our approach combines artistic vision with strategic thinking to create designs that don't just look beautiful, but also drive results and leave lasting impressions.</p>
+            <p>With expertise spanning brand identity, social media design, motion graphics, and visual communications, we've helped countless clients across various industries establish their unique visual presence. Every project is an opportunity to push creative boundaries while maintaining the highest standards of professionalism and quality.</p>
+            <p>Based in Egypt and serving clients globally, Details delivers comprehensive design solutions that resonate with audiences and elevate brands to new heights. We don't just create designs—we craft experiences that matter.</p>
+        </div>
+        
+        <div class="services-section">
+            <h3 class="services-title translatable" data-en="Design Services" data-ar="خدمات التصميم">Design Services</h3>
+            <div class="services-list">
+                <span class="service-badge translatable" data-en="Brand Identity" data-ar="الهوية البصرية">Brand Identity</span>
+                <span class="service-badge translatable" data-en="Logo Design" data-ar="تصميم الشعارات">Logo Design</span>
+                <span class="service-badge translatable" data-en="Social Media" data-ar="السوشيال ميديا">Social Media</span>
+                <span class="service-badge translatable" data-en="Motion Graphics" data-ar="الموشن جرافيك">Motion Graphics</span>
+                <span class="service-badge translatable" data-en="Video Editing" data-ar="مونتاج الفيديو">Video Editing</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2 class="translatable" data-en="Portfolio" data-ar="معرض الأعمال">Portfolio</h2>
+        <p class="section-subtitle translatable" data-en="A Showcase of Creative Excellence" data-ar="عرض للتميز الإبداعي">A Showcase of Creative Excellence</p>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://picsum.photos/600/400?random=1" alt="Brand Identity">
+                <div class="portfolio-info">
+                    <h3>Brand Identity Design</h3>
+                    <p>Complete visual identity system including logo design, color palette, typography, and brand guidelines.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://picsum.photos/600/400?random=2" alt="Social Media">
+                <div class="portfolio-info">
+                    <h3>Social Media Campaign</h3>
+                    <p>Engaging visual content strategy for social platforms with eye-catching graphics.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://picsum.photos/600/400?random=3" alt="Logo">
+                <div class="portfolio-info">
+                    <h3>Logo Design</h3>
+                    <p>Memorable and timeless logo designs that capture brand essence.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://picsum.photos/600/400?random=4" alt="Motion Graphics">
+                <div class="portfolio-info">
+                    <h3>Motion Graphics Video</h3>
+                    <p>Dynamic animated content that brings brands to life.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://picsum.photos/600/400?random=5" alt="Packaging">
+                <div class="portfolio-info">
+                    <h3>Packaging Design</h3>
+                    <p>Innovative product packaging that stands out on shelves.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://picsum.photos/600/400?random=6" alt="Print">
+                <div class="portfolio-info">
+                    <h3>Print Advertising</h3>
+                    <p>High-impact print campaigns including posters, flyers, and brochures.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://picsum.photos/600/400?random=7" alt="UI/UX">
+                <div class="portfolio-info">
+                    <h3>UI/UX Design</h3>
+                    <p>User-centered interface designs that blend aesthetics with functionality.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://picsum.photos/600/400?random=8" alt="Brochure">
+                <div class="portfolio-info">
+                    <h3>Corporate Brochure</h3>
+                    <p>Professional corporate collateral featuring elegant layouts.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://picsum.photos/600/400?random=9" alt="Photography">
+                <div class="portfolio-info">
+                    <h3>Product Photography</h3>
+                    <p>Professional product imaging with expert post-production.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="production-services">
+        <h2 class="translatable" data-en="Production & Printing Services" data-ar="خدمات الإنتاج والطباعة">Production & Printing Services</h2>
+        <p class="section-subtitle translatable" data-en="Complete Solutions for All Your Production Needs" data-ar="حلول متكاملة لجميع احتياجاتك الإنتاجية">Complete Solutions for All Your Production Needs</p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="https://images.unsplash.com/photo-1612538498456-e861df91d4d0?w=600&h=400&fit=crop" alt="Printing">
+                    <span class="service-icon-emoji">📄</span>
+                </div>
+                <div class="service-content">
+                    <h3 class="service-title translatable" data-en="Printing Materials" data-ar="المطبوعات">Printing Materials</h3>
+                    <p class="service-description translatable" data-en="Professional high-quality printing for all marketing and administrative materials" data-ar="طباعة احترافية عالية الجودة لجميع المواد التسويقية والإدارية">Professional high-quality printing for all marketing and administrative materials</p>
+                    <ul class="service-items">
+                        <li class="translatable" data-en="Brochures & Catalogs" data-ar="بروشورات وكتالوجات">Brochures & Catalogs</li>
+                        <li class="translatable" data-en="Flyers & Posters" data-ar="فلايرز وملصقات">Flyers & Posters</li>
+                        <li class="translatable" data-en="Premium Business Cards" data-ar="كروت شخصية فاخرة">Premium Business Cards</li>
+                        <li class="translatable" data-en="Letterheads & Envelopes" data-ar="أوراق رسمية ومظاريف">Letterheads & Envelopes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop" alt="Engraving">
+                    <span class="service-icon-emoji">⚙️</span>
+                </div>
+                <div class="service-content">
+                    <h3 class="service-title translatable" data-en="Engraving" data-ar="الحفر">Engraving</h3>
+                    <p class="service-description translatable" data-en="Precise and meticulous engraving on various surfaces and materials" data-ar="حفر دقيق ومتقن على مختلف الأسطح والمواد">Precise and meticulous engraving on various surfaces and materials</p>
+                    <ul class="service-items">
+                        <li class="translatable" data-en="Metal Engraving" data-ar="حفر على المعادن">Metal Engraving</li>
+                        <li class="translatable" data-en="Wood Engraving" data-ar="حفر على الخشب">Wood Engraving</li>
+                        <li class="translatable" data-en="Acrylic Engraving" data-ar="حفر على الأكريليك">Acrylic Engraving</li>
+                        <li class="translatable" data-en="Glass & Crystal Engraving" data-ar="حفر على الزجاج والكريستال">Glass & Crystal Engraving</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="https://images.unsplash.com/photo-1565688534245-05d6b5be184a?w=600&h=400&fit=crop" alt="Laser Cutting">
+                    <span class="service-icon-emoji">✂️</span>
+                </div>
+                <div class="service-content">
+                    <h3 class="service-title translatable" data-en="Laser Cutting" data-ar="القص بالليزر">Laser Cutting</h3>
+                    <p class="service-description translatable" data-en="High-precision laser cutting for complex designs" data-ar="قص بتقنية الليزر عالية الدقة للتصاميم المعقدة">High-precision laser cutting for complex designs</p>
+                    <ul class="service-items">
+                        <li class="translatable" data-en="Precise cutting of various materials" data-ar="قص دقيق للمواد المختلفة">Precise cutting of various materials</li>
+                        <li class="translatable" data-en="Complex designs & decorations" data-ar="تصاميم معقدة وديكورات">Complex designs & decorations</li>
+                        <li class="translatable" data-en="Wood & Acrylic cutting" data-ar="قص الخشب والأكريليك">Wood & Acrylic cutting</li>
+                        <li class="translatable" data-en="Prototypes & Models" data-ar="نماذج أولية وماكيتات">Prototypes & Models</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=600&h=400&fit=crop" alt="Promotional Gifts">
+                    <span class="service-icon-emoji">🎁</span>
+                </div>
+                <div class="service-content">
+                    <h3 class="service-title translatable" data-en="Promotional Gifts" data-ar="الهدايا الدعائية">Promotional Gifts</h3>
+                    <p class="service-description translatable" data-en="Distinctive promotional gifts that leave a lasting impression" data-ar="هدايا دعائية مميزة تترك انطباعاً دائماً">Distinctive promotional gifts that leave a lasting impression</p>
+                    <ul class="service-items">
+                        <li class="translatable" data-en="Premium printed pens" data-ar="أقلام فاخرة مطبوعة">Premium printed pens</li>
+                        <li class="translatable" data-en="Custom mugs & thermoses" data-ar="أكواب وترامس مخصصة">Custom mugs & thermoses</li>
+                        <li class="translatable" data-en="Medals & Awards" data-ar="ميداليات ودروع تكريم">Medals & Awards</li>
+                        <li class="translatable" data-en="Promotional bags & accessories" data-ar="حقائب وإكسسوارات دعائية">Promotional bags & accessories</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop" alt="Signage">
+                    <span class="service-icon-emoji">🏢</span>
+                </div>
+                <div class="service-content">
+                    <h3 class="service-title translatable" data-en="Signage & Stands" data-ar="اللافتات والستاندات">Signage & Stands</h3>
+                    <p class="service-description translatable" data-en="Professional outdoor advertising and exhibition solutions" data-ar="حلول إعلانية خارجية ومعارض احترافية">Professional outdoor advertising and exhibition solutions</p>
+                    <ul class="service-items">
+                        <li class="translatable" data-en="Illuminated outdoor signs" data-ar="لافتات خارجية مضيئة">Illuminated outdoor signs</li>
+                        <li class="translatable" data-en="Portable exhibition stands" data-ar="ستاندات معارض متنقلة">Portable exhibition stands</li>
+                        <li class="translatable" data-en="Roll-up & X-banner" data-ar="رول أب وإكس بانر">Roll-up & X-banner</li>
+                        <li class="translatable" data-en="Directional & Wayfinding signs" data-ar="لوحات إرشادية وتوجيهية">Directional & Wayfinding signs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&h=400&fit=crop" alt="Fabric Printing">
+                    <span class="service-icon-emoji">👕</span>
+                </div>
+                <div class="service-content">
+                    <h3 class="service-title translatable" data-en="Fabric Printing" data-ar="طباعة على القماش">Fabric Printing</h3>
+                    <p class="service-description translatable" data-en="High-quality textile printing with permanent colors" data-ar="طباعة نسيجية عالية الجودة بألوان ثابتة">High-quality textile printing with permanent colors</p>
+                    <ul class="service-items">
+                        <li class="translatable" data-en="Printed T-shirts & Polos" data-ar="تيشيرتات وبولوهات مطبوعة">Printed T-shirts & Polos</li>
+                        <li class="translatable" data-en="Promotional flags & banners" data-ar="أعلام ورايات دعائية">Promotional flags & banners</li>
+                        <li class="translatable" data-en="Large fabric banners" data-ar="بنرات قماش كبيرة">Large fabric banners</li>
+                        <li class="translatable" data-en="Corporate uniforms" data-ar="زي موحد للشركات">Corporate uniforms</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://wa.me/201281081242?text=Hi%2C%20I'm%20interested%20in%20production%20services" class="cta-button translatable" data-en="Request Free Consultation" data-ar="اطلب استشارة مجانية">Request Free Consultation</a>
+    </section>
+
+    <section id="skills">
+        <h2 class="translatable" data-en="Skills & Expertise" data-ar="المهارات والخبرات">Skills & Expertise</h2>
+        <p class="section-subtitle translatable" data-en="Mastery Across Creative Tools" data-ar="إتقان الأدوات الإبداعية">Mastery Across Creative Tools</p>
+        <div class="skills-container">
+            <div class="skill">
+                <div class="skill-name">
+                    <span>Adobe Photoshop</span>
+                    <span>95%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 95%"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">
+                    <span>Adobe Illustrator</span>
+                    <span>95%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 95%"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">
+                    <span>Adobe Premiere Pro</span>
+                    <span>95%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 95%"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">
+                    <span>Adobe InDesign</span>
+                    <span>90%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 90%"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">
+                    <span>CorelDRAW</span>
+                    <span>90%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 90%"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">
+                    <span>Adobe After Effects</span>
+                    <span>85%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 85%"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">
+                    <span>Adobe Dimension</span>
+                    <span>85%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 85%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <h2 class="translatable" data-en="Client Testimonials" data-ar="آراء العملاء">Client Testimonials</h2>
+        <p class="section-subtitle translatable" data-en="What Our Clients Say" data-ar="ماذا يقول عملاؤنا">What Our Clients Say</p>
+        <div class="testimonials">
+            <div class="testimonial-card">
+                <p class="testimonial-text">Working with Andrew and the Details team was an absolute pleasure. Their attention to detail and creative vision transformed our brand identity completely. The results exceeded our expectations!</p>
+                <p class="testimonial-author">Sarah Mitchell</p>
+                <p class="testimonial-role">Marketing Director, TechStart Inc.</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">Andrew's work on our social media campaign was outstanding. He understood our vision perfectly and delivered designs that significantly increased our engagement rates. A true creative professional!</p>
+                <p class="testimonial-author">Omar Hassan</p>
+                <p class="testimonial-role">CEO, Momentum Digital</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">Details delivered exactly what we needed—a complete brand overhaul. Andrew's 11 years of experience really shows in the quality and sophistication of his work. We couldn't be happier!</p>
+                <p class="testimonial-author">Jennifer Rodriguez</p>
+                <p class="testimonial-role">Founder, Luxe Beauty Co.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="translatable" data-en="Get In Touch" data-ar="تواصل معنا">Get In Touch</h2>
+        <p class="section-subtitle translatable" data-en="Let's Create Something Amazing Together" data-ar="دعنا نصنع شيئاً مذهلاً معاً">Let's Create Something Amazing Together</p>
+        <div class="contact-info">
+            <p class="translatable" data-en="Ready to bring your creative vision to life? Contact us today and let's discuss your next project!" data-ar="مستعد لتحقيق رؤيتك الإبداعية؟ تواصل معنا اليوم ودعنا نناقش مشروعك القادم!">Ready to bring your creative vision to life? Contact us today and let's discuss your next project!</p>
+            <a href="https://wa.me/201281081242?text=Hi%2C%20I'm%20interested%20in%20your%20services" class="cta-button translatable" data-en="Contact Us on WhatsApp" data-ar="تواصل معنا عبر الواتساب">Contact Us on WhatsApp</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-brand">DETAILS</div>
+        <p class="footer-tagline translatable" data-en="Precision in Every Pixel, Impact in Every Design" data-ar="دقة في كل بكسل، تأثير في كل تصميم">Precision in Every Pixel, Impact in Every Design</p>
+        <div class="social-links">
+            <a href="#" target="_blank">📘</a>
+            <a href="#" target="_blank">📷</a>
+            <a href="#" target="_blank">🔗</a>
+            <a href="https://wa.me/201281081242" target="_blank">💬</a>
+        </div>
+        <p class="footer-note translatable" data-en="© 2024 Details Design Studio. All rights reserved." data-ar="© 2024 استوديو Details للتصميم. جميع الحقوق محفوظة.">© 2024 Details Design Studio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function switchLang(lang) {
+            const body = document.body;
+            const html = document.documentElement;
+            const buttons = document.querySelectorAll('.lang-btn');
+            const translatableElements = document.querySelectorAll('.translatable');
+
+            if (lang === 'ar') {
+                html.setAttribute('lang', 'ar');
+                html.setAttribute('dir', 'rtl');
+                body.setAttribute('dir', 'rtl');
+            } else {
+                html.setAttribute('lang', 'en');
+                html.setAttribute('dir', 'ltr');
+                body.setAttribute('dir', 'ltr');
+            }
+
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if ((lang === 'ar' && btn.textContent.includes('AR')) || 
+                    (lang === 'en' && btn.textContent.includes('EN'))) {
+                    btn.classList.add('active');
+                }
+            });
+
+            translatableElements.forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if (text) {
+                    el.textContent = text;
+                }
+            });
+        }
+
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
