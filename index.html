@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details - Andrew Nabil | Creative Designer</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #3d1e6d 0%, #6b2fb5 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 1.2rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(61, 30, 109, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+            flex: 1;
+            justify-content: center;
+        }
+
+        nav a {
+            color: #3d1e6d;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: #6b2fb5; }
+
+        .lang-switch {
+            display: flex;
+            gap: 0.5rem;
+            background: #f0f0f0;
+            padding: 0.5rem;
+            border-radius: 25px;
+        }
+
+        .lang-btn {
+            padding: 0.4rem 1rem;
+            border: none;
+            background: transparent;
+            color: #3d1e6d;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(135deg, #3d1e6d, #6b2fb5);
+            color: white;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .brand-name {
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: 3px;
+        }
+
+        .hero h1 { font-size: 2rem; margin-bottom: 1rem; }
+        .tagline { font-size: 1.3rem; font-style: italic; margin-bottom: 0.5rem; }
+        .experience { font-size: 1.1rem; margin-bottom: 2rem; }
+
+        .btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: white;
+            color: #3d1e6d;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover { transform: translateY(-5px); }
+
+        section {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        section:nth-child(even) { background: #f8f9fa; }
+
+        h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #3d1e6d;
+            font-weight: 800;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #6b2fb5;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            line-height: 2;
+        }
+
+        .about-content p { margin-bottom: 1.5rem; }
+
+        .services-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #3d1e6d;
+            margin: 3rem 0 2rem;
+            font-weight: 700;
+        }
+
+        .services-list {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .service-badge {
+            background: linear-gradient(135deg, #3d1e6d, #6b2fb5);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(107, 47, 181, 0.3);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(61, 30, 109, 0.15);
+            transition: transform 0.4s;
+        }
+
+        .portfolio-item:hover { transform: translateY(-15px); }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .portfolio-info { padding: 2rem; }
+        .portfolio-info h3 { color: #3d1e6d; margin-bottom: 0.8rem; }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            font-size: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 999;
+        }
+
+        .whatsapp-float:hover { background-color: #128c7e; }
+
+        footer {
+            background: #2c1654;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .footer-brand {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.8rem;
+            transition: transform 0.3s;
+        }
+
+        .social-links a:hover { transform: translateY(-5px); }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 1rem; }
+            .brand-name { font-size: 3rem; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="lang-switch">
+            <button class="lang-btn active">EN</button>
+            <button class="lang-btn">AR</button>
+        </div>
+    </nav>
+
+    <a href="https://wa.me/201281081242?text=Hi%2C%20I'm%20interested%20in%20your%20design%20services" 
+       class="whatsapp-float" target="_blank">💬</a>
+
+    <div class="hero" id="home">
+        <div>
+            <div class="brand-name">DETAILS</div>
+            <h1>Andrew Nabil - Creative Designer</h1>
+            <p class="tagline">Precision in Every Pixel, Impact in Every Design</p>
+            <p class="experience">11 Years of Creative Excellence</p>
+            <a href="#portfolio" class="btn">View My Work</a>
+        </div>
+    </div>
+
+    <section id="about">
+        <h2>About Details</h2>
+        <p class="section-subtitle">Where Creativity Meets Precision</p>
+        <div class="about-content">
+            <p><strong>Details</strong> is not just a design studio—it's a philosophy. Founded by <strong>Andrew Nabil</strong>, a creative designer with over 11 years of professional experience, Details specializes in transforming brands through meticulous visual storytelling and innovative design solutions.</p>
+            <p>At Details, we believe that exceptional design lies in the nuances. Our approach combines artistic vision with strategic thinking to create designs that drive results and leave lasting impressions.</p>
+        </div>
+        
+        <h3 class="services-title">Design Services</h3>
+        <div class="services-list">
+            <span class="service-badge">Brand Identity</span>
+            <span class="service-badge">Logo Design</span>
+            <span class="service-badge">Social Media</span>
+            <span class="service-badge">Motion Graphics</span>
+            <span class="service-badge">Video Editing</span>
+        </div>
+        
+        <h3 class="services-title">Production & Printing</h3>
+        <div class="services-list">
+            <span class="service-badge">Printing Materials</span>
+            <span class="service-badge">Engraving</span>
+            <span class="service-badge">Laser Cutting</span>
+            <span class="service-badge">Promotional Gifts</span>
+            <span class="service-badge">Signage & Stands</span>
+            <span class="service-badge">Fabric Printing</span>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <p class="section-subtitle">A Showcase of Creative Excellence</p>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?w=600" alt="Brand Identity">
+                <div class="portfolio-info">
+                    <h3>Brand Identity Design</h3>
+                    <p>Complete visual identity system including logo, colors, and typography.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600" alt="Social Media">
+                <div class="portfolio-info">
+                    <h3>Social Media Campaign</h3>
+                    <p>Engaging visual content for social platforms.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?w=600" alt="Logo">
+                <div class="portfolio-info">
+                    <h3>Logo Design</h3>
+                    <p>Memorable logos that capture brand essence.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600" alt="Motion">
+                <div class="portfolio-info">
+                    <h3>Motion Graphics</h3>
+                    <p>Dynamic animated content.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=600" alt="Packaging">
+                <div class="portfolio-info">
+                    <h3>Packaging Design</h3>
+                    <p>Innovative product packaging.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1600096194534-95cf5ece04cf?w=600" alt="Print">
+                <div class="portfolio-info">
+                    <h3>Print Advertising</h3>
+                    <p>High-impact print campaigns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <p class="section-subtitle">Let's Create Something Amazing Together</p>
+        <div style="max-width: 700px; margin: 0 auto; background: linear-gradient(135deg, #3d1e6d, #6b2fb5); color: white; padding: 3rem; border-radius: 20px; text-align: center;">
+            <h3 style="font-size: 1.8rem; margin-bottom: 2rem;">Contact Information</h3>
+            <p style="font-size: 1.15rem; margin-bottom: 1rem;">📱 Phone: 01281081242</p>
+            <p style="font-size: 1.15rem; margin-bottom: 1rem;">📧 Email: detailsagency1@gmail.com</p>
+            <p style="font-size: 1.15rem; margin-bottom: 2rem;">📍 Location: Egypt</p>
+            <a href="https://wa.me/201281081242" target="_blank" 
+               style="display: inline-flex; align-items: center; gap: 10px; background: #25d366; color: white; padding: 1.2rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 700;">
+                <span style="font-size: 1.8rem;">💬</span>
+                Chat on WhatsApp
+            </a>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Connect on social media:</p>
+            <div class="social-links">
+                <a href="https://www.behance.net/andrown" target="_blank">🎨</a>
+                <a href="https://www.instagram.com/details.ads" target="_blank">📷</a>
+                <a href="https://www.facebook.com/profile.php?id=61557173985017" target="_blank">📘</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-brand">DETAILS</div>
+        <p style="font-style: italic; margin-bottom: 1rem;">Precision in Every Pixel, Impact in Every Design</p>
+        <p>Andrew Nabil | Creative Designer | 11 Years of Excellence</p>
+        <div class="social-links">
+            <a href="https://www.behance.net/andrown" target="_blank">🎨</a>
+            <a href="https://www.instagram.com/details.ads" target="_blank">📷</a>
+            <a href="https://www.facebook.com/profile.php?id=61557173985017" target="_blank">📘</a>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">© 2025 Details Design Studio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
